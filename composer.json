@@ -1,0 +1,42 @@
+{
+    "name": "motia/laravel-ses-manager",
+    "description": "Logs SES bounces and complaints for Laravel app",
+    "type": "package",
+    "license": "MIT",
+    "keywords": [
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "motia",
+            "email": "motie.benachour@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Motia\\LaravelSesManager\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Motia\\LaravelSesManager\\Tests\\": "./tests"
+        }
+    },
+    "require": {
+        "aws/aws-php-sns-message-validator": "^1.5",
+        "illuminate/support": "^5.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Motia\\LaravelSesManager\\LaravelSesEventsServiceProvider"
+            ]
+        }
+    }
+}
