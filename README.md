@@ -2,7 +2,7 @@
 Logs AWS Simple Email Service bounces and complaints for Laravel app
 
 # Setup
-```
+```bash
 composer require motia/laravel-ses-manager
 php artisan migrate
 ```
@@ -19,7 +19,7 @@ Route::post('/webhooks/ses/complaint', [Motia\LaravelSesManager\Controllers::cla
 
 # Usage
 Use `Motia\LaravelSesManager\Eloquent\BlackListItem` is the model for blacklisted emails.
-```
+```php
 // check if email is blacklisted
 $blackListItem = Motia\LaravelSesManager\Eloquent\BlackListItem::query()
   ->whereNotNull('blacklisted_at')
